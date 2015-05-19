@@ -8,7 +8,8 @@ namespace DocumentGenerator
 {
     public class PassportModel : DocumentBase
     {
-        public PassportModel(CountryCode countryOfIssue, string surName, string givenNames, string passportNum, string dob, string expDate, string personalNum, string placeOfBirth, CountryCode nationality, SexCode sex, string docType = "P<")
+        public PassportModel(CountryCode countryOfIssue, string surName, string givenNames, string passportNum, string dob, string expDate, 
+            string personalNum, string placeOfBirth, CountryCode nationality, SexCode sex, string docType = "P<")
         {
             _countryOfIssue = countryOfIssue;
             _surName = surName;
