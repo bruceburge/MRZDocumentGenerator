@@ -7,7 +7,7 @@ It also provides, and assit in the installation of the OCR-B font that is used o
 
 in the future, plans are to be able to generate printable documents of each type
 
-Credit should be given to
+Sources: 
 
 Alan De Smet 
 
