@@ -36,21 +36,23 @@ namespace DocumentGenerator
             XFont font = new XFont("OCR-B 10 BT", 12, XFontStyle.Regular);
             var width = XUnit.FromMillimeter(85.68);
             var height = XUnit.FromMillimeter(54.02);
-            gfx.DrawRectangle(XBrushes.Beige, new XRect(1, 1, width, height));
+			var heightMargin = XUnit.FromInch(.25);
+			var widthMargin = XUnit.FromInch(.25);
+			gfx.DrawRectangle(XBrushes.Beige, new XRect(widthMargin, heightMargin, width, height));
             XImage image = XImage.FromFile(@"Templates\IndentityCard_bg.jpg");
-            gfx.DrawImage(image, 1, 1, width, height);
+			gfx.DrawImage(image,widthMargin,heightMargin, width, height);
 
             // Draw the text
             gfx.DrawString(MRZ[0], font, XBrushes.Black,
-              new XRect(XUnit.FromMillimeter(4), XUnit.FromMillimeter(36.4), XUnit.FromMillimeter(80), 0),
+			  new XRect(XUnit.FromMillimeter(4) + widthMargin, XUnit.FromMillimeter(36.4) + heightMargin, XUnit.FromMillimeter(80), 0),
               XStringFormats.Default);
 
             gfx.DrawString(MRZ[1], font, XBrushes.Black,
-             new XRect(XUnit.FromMillimeter(4), XUnit.FromMillimeter(41), XUnit.FromMillimeter(80), 0),
+			 new XRect(XUnit.FromMillimeter(4) + widthMargin, XUnit.FromMillimeter(41) + heightMargin, XUnit.FromMillimeter(80), 0),
              XStringFormats.Default);
 
             gfx.DrawString(MRZ[2], font, XBrushes.Black,
-              new XRect(XUnit.FromMillimeter(4), XUnit.FromMillimeter(44.5), XUnit.FromMillimeter(80), 0),
+			  new XRect(XUnit.FromMillimeter(4) + widthMargin, XUnit.FromMillimeter(44.5) + heightMargin, XUnit.FromMillimeter(80), 0),
               XStringFormats.Default);
 
 

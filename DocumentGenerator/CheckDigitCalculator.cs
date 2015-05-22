@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocumentGenerator
 {
-    public static class CheckDigitCalculator
+    public static class MrzGeneration
     {
         public static string GeneratePassportMRZ(PassportModel passport)
         {

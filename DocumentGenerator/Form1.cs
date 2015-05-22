@@ -119,7 +119,7 @@ namespace DocumentGenerator
                 txtType.Text
                 );
 
-            rtbMRZ.Text = CheckDigitCalculator.GeneratePassportMRZ(tmp);
+            rtbMRZ.Text = MrzGeneration.GeneratePassportMRZ(tmp);
 
         }
 
@@ -220,7 +220,7 @@ namespace DocumentGenerator
             
             
             IdentityDocumentModel tmp = new IdentityDocumentModel(
-                nationality,
+				issuer,
                 charRemap(txtIdentSurname.Text.Replace(' ', '<')),
                 charRemap(txtIdentGiven.Text.Replace(' ', '<')),
                 txtIdentDocNum.Text,
@@ -229,12 +229,12 @@ namespace DocumentGenerator
                 charRemap(txtIdentOptionalOne.Text.Replace(' ', '<')),
                 charRemap(txtIdentOptionalTwo.Text.Replace(' ', '<')),
                 "",
-                issuer,
+                nationality,
                 sex,
                 txtIdentDocType.Text
                 );
 
-            var MRZ = CheckDigitCalculator.GenerateIdentityCardMRZ(tmp);
+            var MRZ = MrzGeneration.GenerateIdentityCardMRZ(tmp);
             PdfGeneration.GenerateIdentityCard(MRZ);
             rtbMRZ.Text = MRZ[0]+Environment.NewLine+MRZ[1]+Environment.NewLine+MRZ[2];
         }
