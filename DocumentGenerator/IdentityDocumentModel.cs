@@ -25,7 +25,7 @@ namespace DocumentGenerator
             _docType = docType;
         }
 
-        string _mrz = string.Empty;
+        string[] _mrz;
         string _docType = string.Empty;
         CountryCode _countryOfIssue;
         string _surName = string.Empty;
@@ -40,7 +40,7 @@ namespace DocumentGenerator
         CountryCode _nationality;
         SexCode _sex;
 
-        public string MRZ
+        public string[] MRZ
         {
             get { return _mrz; }
             set { _mrz = value; }

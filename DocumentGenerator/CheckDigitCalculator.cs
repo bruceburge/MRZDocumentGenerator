@@ -41,8 +41,10 @@ namespace DocumentGenerator
         }
         
         
-        public static string GenerateIdentityCardMRZ(IdentityDocumentModel document)
+        public static string[] GenerateIdentityCardMRZ(IdentityDocumentModel document)
         {
+            string[] MRZ = new string[3];
+
             string lineOne = string.Empty;
             string lineTwo = string.Empty;
             string lineThree = string.Empty;
@@ -66,8 +68,12 @@ namespace DocumentGenerator
             lineTwo += mrzCheckDigitConvert(lineOne.Substring(5,25)+lineTwo.Substring(0,7)+lineTwo.Substring(8,7)+lineTwo.Substring(18,10));
 
             lineThree = (document.SurName + "<<" + document.GivenNames).PadRight(30, '<').Substring(0, 30); ;
-            
-            return lineOne+Environment.NewLine+lineTwo+Environment.NewLine+lineThree;
+
+            MRZ[0] = lineOne;
+            MRZ[1] = lineTwo;
+            MRZ[2] = lineThree;
+
+            return MRZ; //lineOne + Environment.NewLine + lineTwo + Environment.NewLine + lineThree;
         }
 
 

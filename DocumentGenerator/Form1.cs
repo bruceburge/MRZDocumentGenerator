@@ -234,7 +234,9 @@ namespace DocumentGenerator
                 txtIdentDocType.Text
                 );
 
-            rtbMRZ.Text = CheckDigitCalculator.GenerateIdentityCardMRZ(tmp);
+            var MRZ = CheckDigitCalculator.GenerateIdentityCardMRZ(tmp);
+            PdfGeneration.GenerateIdentityCard(MRZ);
+            rtbMRZ.Text = MRZ[0]+Environment.NewLine+MRZ[1]+Environment.NewLine+MRZ[2];
         }
 
         private void btnIdentGenerateRandom_Click(object sender, EventArgs e)
