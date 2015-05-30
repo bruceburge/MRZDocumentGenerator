@@ -235,7 +235,8 @@ namespace DocumentGenerator
                 );
 
             var MRZ = MrzGeneration.GenerateIdentityCardMRZ(tmp);
-            PdfGeneration.GenerateIdentityCard(MRZ);
+            tmp.MRZ = MRZ;
+            PdfGeneration.GenerateIdentityCard(tmp);
             rtbMRZ.Text = MRZ[0]+Environment.NewLine+MRZ[1]+Environment.NewLine+MRZ[2];
         }
 
