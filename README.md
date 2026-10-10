@@ -1,4 +1,12 @@
 # MRZDocumentGenerator
+
+I've replaced this with a html/javascript single file version 
+
+https://bruceburge.com/mrzgen/
+
+---
+
+
 Tool to help generate machine readable zones for travel documents, such as passports and green cards.
 
 currently the tool will allow generation of passport and travel document MRZ, with the option to generate either randomly.
